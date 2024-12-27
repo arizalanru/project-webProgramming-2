@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Mania</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <div class="content">
+        <h2>Registrasi Pengguna</h2>
+        <form id="registrationForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" required>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <iframe src="home.html" name="contentFrame" style="width:100%; height:600px; border:none;"></iframe>
+    <footer>
+        <p>&copy; 2023 Movie Mania</p>
+    </footer>
+</body>
+<script type="text/javascript">
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let password = document.getElementById('password').value;
+    let confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+    } else {
+        alert('Registration successful!');
+        // Handle registration logic here
+    }
+});
+</script>
+</html>

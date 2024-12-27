@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Mania</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="register.html">Register</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+    <div class="content">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            <label>Preferred Contact Method:</label>
+            <input type="radio" name="contactMethod" value="email" checked>Email
+            <input type="radio" name="contactMethod" value="phone">Phone
+            <label for="subscribe">Subscribe to newsletter:</label>
+            <input type="checkbox" id="subscribe">Yes
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <iframe src="home.html" name="contentFrame" style="width:100%; height:600px; border:none;"></iframe>
+    <footer>
+        <p>&copy; 2023 Movie Mania</p>
+    </footer>
+</body>
+<script type="text/javascript">
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
+
+    if (name === '' || email === '' || message === '') {
+        alert('Please fill in all fields.');
+    } else {
+        alert('Form submitted successfully!');
+        // Here you can add code to handle form submission, e.g., sending data to a server
+    }
+});
+</script>
+</html>
